@@ -14,7 +14,7 @@
 	base_antags = 1
 	maximum_antags = 2
 
-	weight = 10
+	weight = 0
 
 	earliest_start = 0 SECONDS
 
