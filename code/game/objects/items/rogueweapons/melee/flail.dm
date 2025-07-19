@@ -130,13 +130,17 @@
 	icon_state = "necraflail"
 
 /obj/item/rogueweapon/flail/sflail/psyflail
-	name = "psydonian flail"
+	name = "ornate flail"
 	desc = "An ornate flail, plated in a ceremonial veneer of silver. Its flanged head can crumple even the toughest of darksteel-maille."
 	icon_state = "psyflail"
 
 /obj/item/rogueweapon/flail/sflail/psyflail/ComponentInitialize()
 	. = ..()							//+3 force, +50 int, +1 def, make silver
 	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
+
+/obj/item/rogueweapon/flail/sflail/psyflail/preblessed/ComponentInitialize()
+	. = ..()							//Pre-blessed, +3 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, TRUE, 3, FALSE, 50, 1, TRUE)
 
 /obj/item/rogueweapon/flail/peasantwarflail
 	force = 10

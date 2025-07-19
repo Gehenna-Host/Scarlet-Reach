@@ -1009,10 +1009,17 @@
 	i_type = "Weapons"
 */
 //Psydonian weapon smithing
+/datum/anvil_recipe/weapons/psy/dagger
+	name = "Silver Dagger"
+	req_bar = /obj/item/ingot/silverblessed
+	craftdiff = 4
+	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
+	i_type = "Weapons"
+
 /datum/anvil_recipe/weapons/psy/axe
 	name = "Silver War Axe (+1 B. Silver, +1 Stick)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
+	craftdiff = 5
 	created_item = /obj/item/rogueweapon/stoneaxe/battle/psyaxe
 	additional_items = list(/obj/item/ingot/silverblessed, /obj/item/grown/log/tree/stick)
 	i_type = "Weapons"
@@ -1020,7 +1027,7 @@
 /datum/anvil_recipe/weapons/psy/mace
 	name = "Silver Mace (+1 B. Silver, +1 Stick)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
+	craftdiff = 5
 	created_item = /obj/item/rogueweapon/mace/goden/psymace
 	additional_items = list(/obj/item/ingot/silverblessed, /obj/item/grown/log/tree/stick)
 	i_type = "Weapons"
@@ -1028,22 +1035,24 @@
 /datum/anvil_recipe/weapons/psy/spear
 	name = "Silver Spear (+1 Small Log)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
+	craftdiff = 5
 	created_item = /obj/item/rogueweapon/spear/psyspear
 	additional_items = list(/obj/item/grown/log/tree/small)
 	i_type = "Weapons"
 
-/datum/anvil_recipe/weapons/psy/dagger
-	name = "Silver Dagger"
+/datum/anvil_recipe/weapons/psy/sword
+	name = "Silver Sword (+1 B. Silver)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
+	craftdiff = 5
+	additional_items = list(/obj/item/ingot/silverblessed)
+	created_item = /obj/item/rogueweapon/sword/long/psysword
 	i_type = "Weapons"
 
+//Holy, artefact weapons. Not pre-blessed. Gone are the days of mass production.
 /datum/anvil_recipe/weapons/psy/halberd
 	name = "Silver Halberd (+1 B. Silver, +1 Small Log)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
+	craftdiff = 6
 	created_item = /obj/item/rogueweapon/halberd/psyhalberd
 	additional_items = list(/obj/item/ingot/silverblessed, /obj/item/grown/log/tree/small)
 	i_type = "Weapons"
@@ -1051,15 +1060,7 @@
 /datum/anvil_recipe/weapons/psy/gsword
 	name = "Silver Greatsword (+1 B. Silver, +1 H. Steel)"
 	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
+	craftdiff = 6
 	created_item = /obj/item/rogueweapon/greatsword/psygsword
 	additional_items = list(/obj/item/ingot/silverblessed, /obj/item/ingot/steelholy)
-	i_type = "Weapons"
-
-/datum/anvil_recipe/weapons/psy/sword
-	name = "Silver Sword (+1 B. Silver)"
-	req_bar = /obj/item/ingot/silverblessed
-	craftdiff = 3
-	additional_items = list(/obj/item/ingot/silverblessed)
-	created_item = /obj/item/rogueweapon/sword/long/psysword
 	i_type = "Weapons"

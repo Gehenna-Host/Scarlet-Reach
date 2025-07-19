@@ -143,7 +143,7 @@
 	add_overlay(M)
 	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
 		cut_overlays()
-	
+
 	update_icon()
 
 /obj/item/rogueweapon/shield/wood/getonmobprop(tag)
@@ -170,24 +170,6 @@
 	coverage = 40
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
 	max_integrity = 200
-
-/obj/item/rogueweapon/shield/tower/holysee
-	name = "decablessed shield"
-	desc = "Protection of the Ten upon the wielder. A final, staunch line against the darkness. For it's not what is before the shield-carrier that matters, but the home behind them."
-	icon_state = "gsshield"
-	wdefense = 13
-	max_integrity = 300
-	coverage = 50
-	wlength = WLENGTH_NORMAL
-	resistance_flags = null
-	flags_1 = CONDUCT_1
-	force = 20
-	blade_dulling = DULLING_SHAFT_METAL
-	sellprice = 30
-
-/obj/item/rogueweapon/shield/tower/holysee/dark
-	icon_state = "gsshielddark"
-
 
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
 	. = ..()
@@ -226,6 +208,15 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 	return ..()
+
+/obj/item/rogueweapon/shield/tower/metal/holysee
+	name = "ornate shield"
+	desc = "Protection of the Ten upon the wielder. A final, staunch line against the darkness. \
+	For it's not what is before the shield-carrier that matters, but the home behind them."
+	icon_state = "gsshield"
+
+/obj/item/rogueweapon/shield/tower/metal/holysee/dark
+	icon_state = "gsshielddark"
 
 /obj/item/rogueweapon/shield/tower/metal/alloy
 	name = "decrepit shield"

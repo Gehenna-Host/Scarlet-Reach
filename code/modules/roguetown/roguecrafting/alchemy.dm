@@ -120,18 +120,6 @@
 	craftdiff = 5
 	verbage_simple = "mix"
 
-/datum/crafting_recipe/roguetown/alchemy/zizopoison_bottle
-	name = "Bottle of Zizo Poison"
-	category = "Table"
-	result = list(/obj/item/reagent_containers/glass/bottle/rogue/zizopoison = 1)
-	reqs = list(
-		/obj/item/reagent_containers/glass/bottle/alchemical = 1,
-		/obj/item/alch/viscera = 1,
-		/obj/item/alch/bonemeal = 1
-	)
-	craftdiff = 5
-	verbage_simple = "brew"
-
 /// bottle craft
 
 /datum/crafting_recipe/roguetown/alchemy/glassbottles

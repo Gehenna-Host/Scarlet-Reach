@@ -1,5 +1,5 @@
-#define GUILLOTINE_BLADE_MAX_SHARP  10 // This is maxiumum sharpness and will decapitate without failure
-#define GUILLOTINE_DECAP_MIN_SHARP  5  // Minimum amount of sharpness for decapitation. Any less and it will just do severe brute damage
+#define GUILLOTINE_BLADE_MAX_SHARP  5 // This is maxiumum sharpness and will decapitate without failure
+#define GUILLOTINE_DECAP_MIN_SHARP  4  // Minimum amount of sharpness for decapitation. Any less and it will just do severe brute damage
 #define GUILLOTINE_ANIMATION_LENGTH 5 // How many deciseconds the animation is
 #define GUILLOTINE_ANIMATION_RAISE_LENGTH 36
 #define GUILLOTINE_BLADE_RAISED     1
@@ -151,6 +151,9 @@
 
 		playsound(src, 'sound/misc/guillotine.ogg', 100, TRUE)
 
+		// The delay is to make large crowds have a longer lasting applause
+		var/delay_offset = 0
+
 		if(blade_sharpness >= GUILLOTINE_DECAP_MIN_SHARP || head.brute_dam >= 100)
 			if(head.dismemberable)
 				head.dismember()
@@ -174,10 +177,26 @@
 			cut_overlays()
 			add_overlay(mutable_appearance(icon, blood_overlay))
 
+			// The crowd is pleased
+			for(var/mob/M in viewers(src, 7))
+				var/mob/living/carbon/human/C = M
+				if (ishuman(M))
+					C.add_stress(/datum/stressevent/guillotinekill)
+					addtimer(CALLBACK(C, TYPE_PROC_REF(/mob, emote), "clap"), delay_offset * 0.3)
+					delay_offset++
 		else
-			H.apply_damage(15 * blade_sharpness, BRUTE, head)
+			H.apply_damage(30 * blade_sharpness, BRUTE, head)
 			log_combat(user, H, "dropped the blade on", src, " non-fatally")
 			H.emote("scream")
+			// Executor has failed and was ashamed
+			user.add_stress(/datum/stressevent/guillotineexecutorfail)
+			// The crowd is unpleased
+			for(var/mob/M in viewers(src, 7))
+				var/mob/living/carbon/human/C = M
+				if (ishuman(M))
+					C.add_stress(/datum/stressevent/guillotinefail)
+					addtimer(CALLBACK(C, TYPE_PROC_REF(/mob, emote), "huh"), delay_offset * 0.3)
+					delay_offset++
 
 		if (blade_sharpness > 1)
 			blade_sharpness -= 1

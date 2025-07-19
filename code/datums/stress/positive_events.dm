@@ -237,6 +237,11 @@
 	desc = span_info("A Devout Eoran shone their brightness upon me.")
 	timer = 10 MINUTES
 
+/datum/stressevent/guillotinekill
+	stressadd = -5
+	desc = span_green("A nice modern entertainmant.")
+	timer = 10 MINUTES
+
 /datum/stressevent/gazeuponme
 	stressadd = -5
 	desc = span_green("I am a heretic under Ten's gaze... My patron is proud of me!")

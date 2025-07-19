@@ -385,22 +385,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	taste_description = "cold needles"
 	toxpwr = 20
 
-/datum/reagent/toxin/zizopoison
-	name = "Zizo Poison"
-	description = "A mysterious, forbidden poison that turns the drinker into a deadite."
-	reagent_state = LIQUID
-	color = "#4B2E83"
-	taste_description = "rotting flesh"
-
-/datum/reagent/toxin/zizopoison/on_mob_life(mob/living/carbon/human/M)
-	if(!HAS_TRAIT(M, TRAIT_ZOMBIE_IMMUNE) && ishuman(M) && M.mind)
-		M.zombie_check_can_convert()
-		to_chat(M, span_danger("A cold, evil force invades your body!"))
-		M.reagents.remove_reagent(src.type, src.volume)
-		var/datum/antagonist/zombie/Z = M.mind.has_antag_datum(/datum/antagonist/zombie)
-		if(Z)
-			Z.wake_zombie(TRUE)
-	return ..()
 //Potion reactions
 /datum/chemical_reaction/alch/stronghealth
 	name = "Strong Health Potion"
@@ -437,12 +421,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	required_reagents = list(/datum/reagent/toxin/stampoison = 1, /datum/reagent/additive = 1)
 	mix_message = "The cauldron glows for a moment."
 
-/datum/chemical_reaction/alch/zizopoison
-	name = "Zizo Poison"
-	id = /datum/reagent/toxin/zizopoison
-	results = list(/datum/reagent/toxin/zizopoison = 1)
-	required_reagents = list(/datum/reagent/toxin/strongpoison = 1, /datum/reagent/additive = 1)
-	mix_message = "The cauldron bubbles with a sinister purple vapor."
 
 
 /*----------\

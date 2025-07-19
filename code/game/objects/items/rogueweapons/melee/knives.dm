@@ -1,4 +1,4 @@
-//intent datums ฅ^•ﻌ•^ฅ 
+//intent datums ฅ^•ﻌ•^ฅ
 
 /datum/intent/dagger
 	clickcd = 8
@@ -133,7 +133,7 @@
 /obj/item/rogueweapon/huntingknife/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg", "modular_helmsguard/sound/sheath_sounds/draw_dagger2.ogg", "sound/foley/equip/swordsmall2.ogg")
 	. = ..()
-	
+
 /obj/item/rogueweapon/huntingknife/rmb_self(mob/user)
 	. = ..()
 	if(.)
@@ -344,15 +344,19 @@
 	is_silver = TRUE
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
-	name = "blessed silver dagger"
-	desc = "An ornate dagger, plated in a ceremonial veneer of silver. The bane of vampyres and verevolves, in the hands of a faithful hunter."
+	name = "ornate dagger"
+	desc = "An ornate dagger, plated in a ceremonial veneer of silver. The bane of those cursed, in the hands of a faithful hunter. \
+	It is said that on induction into the Inquisitorial order, a new member of the martial arm is handed such a blade. A token, for their service."
 	icon_state = "psydagger"
 	sellprice = 70
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger/ComponentInitialize()
-	. = ..()				//It's preblessed with silver only. Mostly redundant, but safely prevents double-blessing.
-	AddComponent(/datum/component/psyblessed, TRUE, FALSE, FALSE, FALSE, FALSE, TRUE)
-	sellprice += 200
+	. = ..()					//+2 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 2, FALSE, 50, 1, TRUE)
+
+/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger/preblessed/ComponentInitialize()
+	. = ..()					//Pre-blessed, +2 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, TRUE, 2, FALSE, 50, 1, TRUE)
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
 	. = ..()
@@ -565,7 +569,7 @@
 			var/chosen = input(user, "What would you like to style?", "Hair Styling") as null|anything in options
 			if(!chosen)
 				return
-			
+
 			switch(chosen)
 				if("hairstyle")
 					var/datum/customizer_choice/bodypart_feature/hair/head/humanoid/hair_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/head/humanoid)
@@ -573,25 +577,25 @@
 					for(var/hair_type in hair_choice.sprite_accessories)
 						var/datum/sprite_accessory/hair/head/hair = new hair_type()
 						valid_hairstyles[hair.name] = hair_type
-					
+
 					var/new_style = input(user, "Choose their hairstyle", "Hair Styling") as null|anything in valid_hairstyles
 					if(new_style)
 						user.visible_message(span_notice("[user] begins styling [H]'s hair..."), span_notice("You begin styling [H == user ? "your" : "[H]'s"] hair..."))
 						if(!do_after(user, 30 SECONDS, target = H))
 							to_chat(user, span_warning("The styling was interrupted!"))
 							return
-						
+
 						var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 						if(head && head.bodypart_features)
 							var/datum/bodypart_feature/hair/head/current_hair = null
 							for(var/datum/bodypart_feature/hair/head/hair_feature in head.bodypart_features)
 								current_hair = hair_feature
 								break
-							
+
 							if(current_hair)
 								var/datum/customizer_entry/hair/hair_entry = new()
 								hair_entry.hair_color = current_hair.hair_color
-								
+
 								// Preserve gradients and their colors
 								if(istype(current_hair, /datum/bodypart_feature/hair/head))
 									hair_entry.natural_gradient = current_hair.natural_gradient
@@ -600,17 +604,17 @@
 										hair_entry.dye_gradient = current_hair.hair_dye_gradient
 									if(hasvar(current_hair, "hair_dye_color"))
 										hair_entry.dye_color = current_hair.hair_dye_color
-								
+
 								var/datum/bodypart_feature/hair/head/new_hair = new()
 								new_hair.set_accessory_type(valid_hairstyles[new_style], hair_entry.hair_color, H)
 								hair_choice.customize_feature(new_hair, H, null, hair_entry)
-								
+
 								head.remove_bodypart_feature(current_hair)
 								head.add_bodypart_feature(new_hair)
 								H.update_hair()
 								playsound(src, 'sound/items/flint.ogg', 50, TRUE)
 								user.visible_message(span_notice("[user] finishes styling [H]'s hair."), span_notice("You finish styling [H == user ? "your" : "[H]'s"] hair."))
-				
+
 				if("facial hairstyle")
 					if(H.gender != MALE)
 						to_chat(user, span_warning("They don't have facial hair to style!"))
@@ -620,30 +624,30 @@
 					for(var/facial_type in facial_choice.sprite_accessories)
 						var/datum/sprite_accessory/hair/facial/facial = new facial_type()
 						valid_facial_hairstyles[facial.name] = facial_type
-					
+
 					var/new_style = input(user, "Choose their facial hairstyle", "Hair Styling") as null|anything in valid_facial_hairstyles
 					if(new_style)
 						user.visible_message(span_notice("[user] begins styling [H]'s facial hair..."), span_notice("You begin styling [H == user ? "your" : "[H]'s"] facial hair..."))
 						if(!do_after(user, 60 SECONDS, target = H))
 							to_chat(user, span_warning("The styling was interrupted!"))
 							return
-						
+
 						var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 						if(head && head.bodypart_features)
 							var/datum/bodypart_feature/hair/facial/current_facial = null
 							for(var/datum/bodypart_feature/hair/facial/facial_feature in head.bodypart_features)
 								current_facial = facial_feature
 								break
-							
+
 							if(current_facial)
 								var/datum/customizer_entry/hair/facial/facial_entry = new()
 								facial_entry.hair_color = current_facial.hair_color
 								facial_entry.accessory_type = current_facial.accessory_type
-								
+
 								var/datum/bodypart_feature/hair/facial/new_facial = new()
 								new_facial.set_accessory_type(valid_facial_hairstyles[new_style], facial_entry.hair_color, H)
 								facial_choice.customize_feature(new_facial, H, null, facial_entry)
-								
+
 								head.remove_bodypart_feature(current_facial)
 								head.add_bodypart_feature(new_facial)
 								H.update_hair()
@@ -658,7 +662,7 @@
 			var/chosen = input(user, "What would you like to style?", "Hair Styling") as null|anything in options
 			if(!chosen)
 				return
-			
+
 			switch(chosen)
 				if("hairstyle")
 					var/datum/customizer_choice/bodypart_feature/hair/head/humanoid/hair_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/head/humanoid)
@@ -666,25 +670,25 @@
 					for(var/hair_type in hair_choice.sprite_accessories)
 						var/datum/sprite_accessory/hair/head/hair = new hair_type()
 						valid_hairstyles[hair.name] = hair_type
-					
+
 					var/new_style = input(user, "Choose their hairstyle", "Hair Styling") as null|anything in valid_hairstyles
 					if(new_style)
 						user.visible_message(span_notice("[user] begins styling [H]'s hair..."), span_notice("You begin styling [H == user ? "your" : "[H]'s"] hair..."))
 						if(!do_after(user, 60 SECONDS, target = H))
 							to_chat(user, span_warning("The styling was interrupted!"))
 							return
-						
+
 						var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 						if(head && head.bodypart_features)
 							var/datum/bodypart_feature/hair/head/current_hair = null
 							for(var/datum/bodypart_feature/hair/head/hair_feature in head.bodypart_features)
 								current_hair = hair_feature
 								break
-							
+
 							if(current_hair)
 								var/datum/customizer_entry/hair/hair_entry = new()
 								hair_entry.hair_color = current_hair.hair_color
-								
+
 								// Preserve gradients and their colors
 								if(istype(current_hair, /datum/bodypart_feature/hair/head))
 									hair_entry.natural_gradient = current_hair.natural_gradient
@@ -693,17 +697,17 @@
 										hair_entry.dye_gradient = current_hair.hair_dye_gradient
 									if(hasvar(current_hair, "hair_dye_color"))
 										hair_entry.dye_color = current_hair.hair_dye_color
-								
+
 								var/datum/bodypart_feature/hair/head/new_hair = new()
 								new_hair.set_accessory_type(valid_hairstyles[new_style], hair_entry.hair_color, H)
 								hair_choice.customize_feature(new_hair, H, null, hair_entry)
-								
+
 								head.remove_bodypart_feature(current_hair)
 								head.add_bodypart_feature(new_hair)
 								H.update_hair()
 								playsound(src, 'sound/items/flint.ogg', 50, TRUE)
 								user.visible_message(span_notice("[user] finishes styling [H]'s hair."), span_notice("You finish styling [H == user ? "your" : "[H]'s"] hair."))
-				
+
 				if("facial hairstyle")
 					if(H.gender != MALE)
 						to_chat(user, span_warning("They don't have facial hair to style!"))
@@ -713,30 +717,30 @@
 					for(var/facial_type in facial_choice.sprite_accessories)
 						var/datum/sprite_accessory/hair/facial/facial = new facial_type()
 						valid_facial_hairstyles[facial.name] = facial_type
-					
+
 					var/new_style = input(user, "Choose their facial hairstyle", "Hair Styling") as null|anything in valid_facial_hairstyles
 					if(new_style)
 						user.visible_message(span_notice("[user] begins styling [H]'s facial hair..."), span_notice("You begin styling [H == user ? "your" : "[H]'s"] facial hair..."))
 						if(!do_after(user, 60 SECONDS, target = H))
 							to_chat(user, span_warning("The styling was interrupted!"))
 							return
-						
+
 						var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 						if(head && head.bodypart_features)
 							var/datum/bodypart_feature/hair/facial/current_facial = null
 							for(var/datum/bodypart_feature/hair/facial/facial_feature in head.bodypart_features)
 								current_facial = facial_feature
 								break
-							
+
 							if(current_facial)
 								var/datum/customizer_entry/hair/facial/facial_entry = new()
 								facial_entry.hair_color = current_facial.hair_color
 								facial_entry.accessory_type = current_facial.accessory_type
-								
+
 								var/datum/bodypart_feature/hair/facial/new_facial = new()
 								new_facial.set_accessory_type(valid_facial_hairstyles[new_style], facial_entry.hair_color, H)
 								facial_choice.customize_feature(new_facial, H, null, facial_entry)
-								
+
 								head.remove_bodypart_feature(current_facial)
 								head.add_bodypart_feature(new_facial)
 								H.update_hair()
@@ -753,7 +757,7 @@
 			salvage_time = (70 - ((user.get_skill_level(/datum/skill/misc/sewing)) * 10))
 			if(!do_after(user, salvage_time, target = user))
 				return
-			
+
 			if(item.fiber_salvage) //We're getting fiber as base if fiber is present on the item
 				new /obj/item/natural/fibers(get_turf(item))
 			if(istype(item, /obj/item/storage))

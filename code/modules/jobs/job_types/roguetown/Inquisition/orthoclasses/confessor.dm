@@ -12,6 +12,27 @@
 
 /datum/outfit/job/roguetown/confessor/pre_equip(mob/living/carbon/human/H)
 	..()
+	switch(H.patron?.type)
+		if(/datum/patron/divine/astrata)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/divine/abyssor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
+		if(/datum/patron/divine/xylix)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+		if(/datum/patron/divine/dendor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if(/datum/patron/divine/necra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+		if(/datum/patron/divine/pestra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if(/datum/patron/divine/eora)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+		if(/datum/patron/divine/noc)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+		if(/datum/patron/divine/ravox)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
+		if(/datum/patron/divine/malum)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
 	H.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) // Cudgellin - Nonlethals
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -38,9 +59,8 @@
 			H.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 			beltr = /obj/item/quiver/arrows
-	H.set_blindness(0)		
+	H.set_blindness(0)
 	cloak = /obj/item/clothing/suit/roguetown/armor/longcoat
-	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	backr = /obj/item/storage/backpack/rogue/satchel/black
@@ -51,7 +71,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	mask = /obj/item/clothing/mask/rogue/facemask/psydonmask
 	head = /obj/item/clothing/head/roguetown/roguehood/psydon
-	backpack_contents = list(/obj/item/roguekey/inquisition = 1, /obj/item/lockpickring/mundane = 1, /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger, /obj/item/grapplinghook = 1)
+	backpack_contents = list(/obj/item/roguekey/inquisition = 1, /obj/item/lockpickring/mundane = 1, /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger/preblessed, /obj/item/grapplinghook = 1)
 	H.change_stat("strength", -1) // weasel
 	H.change_stat("endurance", 3)
 	H.change_stat("perception", 2)
@@ -61,6 +81,7 @@
 	ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_OUTLANDER, TRAIT_GENERIC)		//You're a foreigner, a guest of the realm.
+	ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)//Given they don't have the psyblessed silver cross. Puts them in line with the Inquisitor.
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = FALSE, devotion_limit = CLERIC_REQ_1)
 	H.grant_language(/datum/language/otavan)

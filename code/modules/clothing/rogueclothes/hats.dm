@@ -58,7 +58,7 @@
 	worn_y_dimension = 64
 	sewrepair = TRUE
 
-/obj/item/clothing/head/roguetown/roguehood/MiddleClick(mob/user) 
+/obj/item/clothing/head/roguetown/roguehood/MiddleClick(mob/user)
 	overarmor = !overarmor
 	to_chat(user, span_info("I [overarmor ? "wear \the [src] under my hair" : "wear \the [src] over my hair"]."))
 	if(overarmor)
@@ -270,7 +270,7 @@
 	icon_state = "dendormask"
 	item_state = "dendormask"
 	icon = 'icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi' 
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	body_parts_covered = MOUTH
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
@@ -1040,7 +1040,7 @@
 		icon_state = "zizofrogmouth"
 		name = "darksteel froggemund"
 		desc = "A darksteel froggemund. Called forth from the edge of what should be known. In Her name."
-		flags_inv = HIDEFACE|HIDESNOUT|HIDEEARS 
+		flags_inv = HIDEFACE|HIDESNOUT|HIDEEARS
 		body_parts_covered = HEAD|EARS|HAIR
 		adjustable = CANT_CADJUST
 	else
@@ -1289,8 +1289,8 @@
 	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute
-	name = "Silver barbute"
-	desc = "A ceremonial barbute, masterfully forged to represent Tens' divine authority. The Order of Saint Malum's artisans have chiseled this pronged visage into more statues than you could possibly imagine."
+	name = "ornate barbute"
+	desc = "A ceremonial barbute, masterfully forged to represent the Ten's divine authority. The Order of Saint Malum's artisans have chiseled this pronged visage into more statues than you could possibly imagine."
 	icon_state = "psydonbarbute"
 	item_state = "psydonbarbute"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDESNOUT
@@ -1304,7 +1304,7 @@
 				return list("shrink" = 0.32,"sx" = -3,"sy" = -8,"nx" = 6,"ny" = -8,"wx" = -1,"wy" = -8,"ex" = 3,"ey" = -8,"nturn" = 180,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 1,"sflip" = 0,"wflip" = 0,"eflip" = 8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm
-	name = "Ornate armet"
+	name = "ornate armet"
 	desc = "An ornate helmet, whose visor has been bound shut with blacksteel chains. The Order of Saint Eora often decorates these armets with flowers - not only as a lucky charm gifted to them by fair maidens and family, but also as a vibrant reminder that 'happiness has to be fought for.'"
 	icon_state = "psydonarmet"
 	item_state = "psydonarmet"
@@ -1981,7 +1981,7 @@
 	desc = "A feathered leather hat, to show them all your superiority."
 	icon_state = "duelhat"
 	sewrepair = TRUE
-	color = COLOR_ALMOST_BLACK	
+	color = COLOR_ALMOST_BLACK
 	detail_tag = "_detail"
 	detail_color = COLOR_SILVER
 	salvage_result = /obj/item/natural/hide/cured

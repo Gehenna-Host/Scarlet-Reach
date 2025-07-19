@@ -113,9 +113,3 @@
 	name = "Aphrodisiac Wine"
 	smells_like = "ardent sweetness"
 	output_reagents = list(/datum/reagent/consumable/ethanol/beer/emberwine = 27)
-
-/datum/alch_cauldron_recipe/zizopoison
-	name = "Zizo Poison"
-	smells_like = "evil magic"
-	skill_required = SKILL_LEVEL_EXPERT
-	output_reagents = list(/datum/reagent/toxin/zizopoison = 81)

@@ -55,7 +55,7 @@
 	icon_state = "ancientboots"
 
 /obj/item/clothing/shoes/roguetown/boots/psydonboots
-	name = "Holy Blacksteel boots"
+	name = "holy blacksteel boots"
 	desc = "Blacksteel-heeled boots. The leather refuses to be worn down, no matter how far you march through these lands."
 	icon_state = "psydonboots"
 	item_state = "psydonboots"

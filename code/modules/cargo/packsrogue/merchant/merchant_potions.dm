@@ -71,8 +71,3 @@
 	name = "Luck Potion"
 	cost = 50
 	contains = list(/obj/item/reagent_containers/glass/bottle/alchemical/lucpot)
-
-/datum/supply_pack/rogue/potions/zizopoison
-	name = "Zizo Poison Bottle"
-	cost = 200
-	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/zizopoison)

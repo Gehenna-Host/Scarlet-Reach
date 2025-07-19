@@ -116,7 +116,7 @@
 	smeltresult = /obj/item/ingot/aaslag
 
 /obj/item/clothing/gloves/roguetown/chain/psydon
-	name = "Holy Blacksteel gloves"
+	name = "holy blacksteel gloves"
 	desc = "Blacksteel-bound gauntlets. These ritualistic restraints, when left to dangle-and-sway, assist in the deflection of unpredictable blows."
 	icon_state = "psydongloveschain"
 	item_state = "psydongloveschains"

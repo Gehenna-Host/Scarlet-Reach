@@ -11,8 +11,27 @@
 
 /datum/outfit/job/roguetown/spellbreaker/pre_equip(mob/living/carbon/human/H)
 	..()
-	neck = /obj/item/clothing/neck/roguetown/psicross/noc
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	switch(H.patron?.type)
+		if(/datum/patron/divine/astrata)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/divine/abyssor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
+		if(/datum/patron/divine/xylix)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+		if(/datum/patron/divine/dendor)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+		if(/datum/patron/divine/necra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/necra
+		if(/datum/patron/divine/pestra)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if(/datum/patron/divine/eora)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/eora
+		if(/datum/patron/divine/noc)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/noc
+		if(/datum/patron/divine/ravox)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
+		if(/datum/patron/divine/malum)
+			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
 	gloves = /obj/item/clothing/gloves/roguetown/chain/psydon
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -25,7 +44,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	
+
 	backpack_contents = list(
 		/obj/item/roguekey/inquisition = 1,
 		/obj/item/rope/chain = 1,
@@ -58,4 +77,5 @@
 		ADD_TRAIT(H, TRAIT_MAGEARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
-		H.cmode_music = 'sound/music/inquisitorcombat.ogg' 
+		ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)//Given they don't have the psyblessed silver cross. Puts them in line with the Inquisitor.
+		H.cmode_music = 'sound/music/inquisitorcombat.ogg'

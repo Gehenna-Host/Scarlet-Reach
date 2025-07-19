@@ -12,7 +12,7 @@
 	outfit = null
 	outfit_female = null
 	display_order = JDO_ORTHODOXIST
-	min_pq = 5 // We need you to be atleast kinda competent to do this. This is a soft antaggy sorta role. Also needs to know wtf a PSYDON is
+	min_pq = 5
 	max_pq = null
 	round_contrib_points = 2
 	advclass_cat_rolls = list(CTAG_INQUISITION = 20)
@@ -29,3 +29,6 @@
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
+//They may now assist the Inquisitor. As is proper.
+		H.verbs |= /mob/living/carbon/human/proc/faith_test
+		H.verbs |= /mob/living/carbon/human/proc/torture_victim

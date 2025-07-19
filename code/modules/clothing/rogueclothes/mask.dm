@@ -1,4 +1,4 @@
-/obj/item/clothing/mask/rogue/MiddleClick(mob/user) 
+/obj/item/clothing/mask/rogue/MiddleClick(mob/user)
 	if((user.zone_selected == BODY_ZONE_PRECISE_NOSE) && (cansnout == TRUE))
 		if(snouting == TRUE)
 			snouting = FALSE
@@ -174,7 +174,7 @@
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/mask/rogue/facemask/psydonmask
-	name = "Silver mask"
+	name = "silver mask"
 	desc = "A silver mask, forever locked in a rigor of uncontestable joy. The Order of Saint Xylix can't decide on whether it's meant to represent Psydon's 'mirthfulness,' 'theatricality,' or the unpredictable melding of both."
 	icon_state = "psydonmask"
 	item_state = "psydonmask"
@@ -211,7 +211,7 @@
 	if(QDELETED(src))
 		return
 	qdel(src)
-	
+
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/equipped(mob/living/user, slot)
 	. = ..()
@@ -377,7 +377,7 @@
 	flags_inv = HIDEFACE
 	body_parts_covered = EYES
 	slot_flags = ITEM_SLOT_MASK
-	color = COLOR_ALMOST_BLACK	
+	color = COLOR_ALMOST_BLACK
 	detail_tag = "_detail"
 	detail_color = COLOR_SILVER
 	sewrepair = TRUE

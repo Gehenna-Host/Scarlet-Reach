@@ -67,6 +67,16 @@
 	stressadd = 2
 	desc = span_red("I saw something ghastly.")
 
+/datum/stressevent/guillotinefail
+	timer = 5 MINUTES
+	stressadd = 3
+	desc = span_red("This execution sucks!")
+
+/datum/stressevent/guillotineexecutorfail
+	timer = 15 MINUTES
+	stressadd = 5
+	desc = span_boldred("I have failed guillotine execution! What a shame!")
+
 /datum/stressevent/bleeding
 	timer = 2 MINUTES
 	stressadd = 2
