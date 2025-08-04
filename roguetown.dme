@@ -2074,6 +2074,7 @@
 #include "code\modules\spells\roguetown\confessor.dm"
 #include "code\modules\spells\roguetown\create_abyssoid.dm"
 #include "code\modules\spells\roguetown\create_wise_tree.dm"
+#include "code\modules\spells\roguetown\evilkatar.dm"
 #include "code\modules\spells\roguetown\helper.dm"
 #include "code\modules\spells\roguetown\jester.dm"
 #include "code\modules\spells\roguetown\monk.dm"
