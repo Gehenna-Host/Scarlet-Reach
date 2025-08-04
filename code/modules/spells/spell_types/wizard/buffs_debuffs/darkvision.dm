@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/targeted/touch/darkvision
 	name = "Darkvision"
 	desc = "Enhance the night vision of a target you touch for 15 minutes."
-	overlay_state = "rune0"
+	overlay_state = "darkvision"
 	clothes_req = FALSE
 	drawmessage = "I prepare to grant Darkvision."
 	dropmessage = "I release my arcyne focus."

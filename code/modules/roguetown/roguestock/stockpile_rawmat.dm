@@ -24,6 +24,19 @@
 	stockpile_limit = 50
 	passive_generation = 2
 
+/datum/roguestock/stockpile/cinnabar
+	name = "Cinnabar"
+	desc = "A red mineral used to make quicksilver."
+	item_type = /obj/item/rogueore/cinnabar
+	held_items = list(0, 0)
+	payout_price = 5
+	withdraw_price = 5
+	transport_fee = 10
+	export_price = 10
+	stockpile_limit = 50
+	importexport_amt = 5
+
+
 /datum/roguestock/stockpile/stone
 	name = "Stone"
 	desc = "Stones. Used for construction"

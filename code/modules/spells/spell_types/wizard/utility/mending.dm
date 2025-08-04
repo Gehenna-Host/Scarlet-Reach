@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/invoked/mending
 	name = "Mending"
 	desc = "Uses arcyne energy to mend an item."
-	overlay_state = "null"
+	overlay_state = "mending"
 	releasedrain = 50
 	chargetime = 5
 	recharge_time = 20 SECONDS

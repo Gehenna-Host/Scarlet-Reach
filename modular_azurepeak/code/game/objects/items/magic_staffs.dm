@@ -14,14 +14,14 @@
 /obj/item/rogueweapon/woodstaff/Initialize()
 	. = ..()
 	var/static/list/slapcraft_recipe_list = list(
-		/datum/crafting_recipe/toper_staff,
-		/datum/crafting_recipe/amethyst_staff,
-		/datum/crafting_recipe/emerald_staff,
-		/datum/crafting_recipe/sapphire_staff,
-		/datum/crafting_recipe/quartz_staff,
-		/datum/crafting_recipe/ruby_staff,
-		/datum/crafting_recipe/diamond_staff,
-		/datum/crafting_recipe/riddle_of_steel_staff,
+		/datum/crafting_recipe/gemstaff/toper_staff,
+		/datum/crafting_recipe/gemstaff/amethyst_staff,
+		/datum/crafting_recipe/gemstaff/emerald_staff,
+		/datum/crafting_recipe/gemstaff/sapphire_staff,
+		/datum/crafting_recipe/gemstaff/quartz_staff,
+		/datum/crafting_recipe/gemstaff/ruby_staff,
+		/datum/crafting_recipe/gemstaff/diamond_staff,
+		/datum/crafting_recipe/gemstaff/riddle_of_steel_staff,
 		)
 
 	AddElement(
@@ -97,7 +97,6 @@
 /obj/item/rogueweapon/woodstaff/riddle_of_steel/magos
 	name = "\improper Staff of the Court Magos"
 	icon_state = "courtstaff"
-	sellprice = 500
 
 /obj/item/rogueweapon/woodstaff/naledi
 	cast_time_reduction = DIAMOND_CAST_TIME_REDUCTION
@@ -105,56 +104,59 @@
 
 //crafting datums
 
-/datum/crafting_recipe/toper_staff
+/datum/crafting_recipe/gemstaff
+	abstract_type = /datum/crafting_recipe/gemstaff
+
+/datum/crafting_recipe/gemstaff/toper_staff
 	name = "toper-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/toper
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/yellow = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/amethyst_staff
+/datum/crafting_recipe/gemstaff/amethyst_staff
 	name = "amethyst-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/amethyst
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/amethyst = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/emerald_staff
+/datum/crafting_recipe/gemstaff/emerald_staff
 	name = "gemerald-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/emerald
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/green = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/sapphire_staff
+/datum/crafting_recipe/gemstaff/sapphire_staff
 	name = "saffira-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/sapphire
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/violet = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/quartz_staff
+/datum/crafting_recipe/gemstaff/quartz_staff
 	name = "blortz-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/quartz
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/blue = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/ruby_staff
+/datum/crafting_recipe/gemstaff/ruby_staff
 	name = "rontz-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/ruby
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/ruby = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/diamond_staff
+/datum/crafting_recipe/gemstaff/diamond_staff
 	name = "dorpel-focused staff"
 	result = /obj/item/rogueweapon/woodstaff/diamond
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,
 				/obj/item/roguegem/diamond = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/riddle_of_steel_staff
+/datum/crafting_recipe/gemstaff/riddle_of_steel_staff
 	name = "Staff of the Riddlesteel"
 	result = /obj/item/rogueweapon/woodstaff/riddle_of_steel
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,

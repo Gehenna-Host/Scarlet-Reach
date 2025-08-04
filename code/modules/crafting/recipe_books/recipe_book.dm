@@ -99,10 +99,11 @@
 			temp_recipe = new path()
 			var/datum/brewing_recipe/r = temp_recipe
 			category = r.category
-		// else if(ispath(path, /datum/runerituals))
-		// 	temp_recipe = new path()
-		// 	var/datum/runerituals/r = temp_recipe
-		// 	category = r.category
+
+		else if(ispath(path, /datum/runeritual))
+			temp_recipe = new path()
+			var/datum/runeritual/r = temp_recipe
+			category = r.category			
 
 		// Clean up our temporary instance
 		if(temp_recipe)
@@ -492,11 +493,11 @@
 		var/datum/brewing_recipe/r = temp_recipe
 		recipe_name = initial(r.name)
 		recipe_html = get_recipe_specific_html(r, user)
-	// else if(ispath(path, /datum/runerituals))
-	// 	temp_recipe = new path()
-	// 	var/datum/runerituals/r = temp_recipe
-	// 	recipe_name = initial(r.name)
-	// 	recipe_html = get_recipe_specific_html(r, user)
+	else if(ispath(path, /datum/runeritual))
+		temp_recipe = new path()
+		var/datum/runeritual/r = temp_recipe
+		recipe_name = initial(r.name)
+		recipe_html = get_recipe_specific_html(r, user)
 
 	if(temp_recipe)
 		qdel(temp_recipe)

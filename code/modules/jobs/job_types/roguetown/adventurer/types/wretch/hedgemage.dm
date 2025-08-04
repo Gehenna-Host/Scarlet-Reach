@@ -48,5 +48,12 @@
 	H.change_stat("speed", 1)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	H?.mind.adjust_spellpoints(27) // Unlike Rogue Mage, who gets 6 but DExpert, this one don't have DExpert but have more spell points than anyone but the CM.
+	var/classes = list("Hedge Mage","Rogue Mage")
+	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+	switch(classchoice)
+		if("Hedge Mage")
+			H?.mind.adjust_spellpoints(27)
+		if("Rogue Mage")
+			H?.mind.adjust_spellpoints(21)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	wretch_select_bounty(H)

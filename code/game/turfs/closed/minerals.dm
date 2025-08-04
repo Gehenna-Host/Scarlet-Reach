@@ -301,6 +301,13 @@
 	spreadChance = 33
 	spread = 11
 
+/turf/closed/mineral/rogue/cinnabar
+	icon_state = "mingold"
+	mineralType = /obj/item/rogueore/cinnabar
+	rockType = /obj/item/natural/rock/cinnabar
+	spreadChance = 23
+	spread = 5
+
 /turf/closed/mineral/rogue/gem
 	icon_state = "mingold"
 	mineralType = /obj/item/roguegem/random

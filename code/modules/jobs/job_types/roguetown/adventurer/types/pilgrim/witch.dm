@@ -5,7 +5,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/witch
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
-	traits_applied = list(TRAIT_RITUALIST, TRAIT_DEATHSIGHT, TRAIT_WITCH, TRAIT_ARCYNE_T1)
+	traits_applied = list(TRAIT_DEATHSIGHT, TRAIT_WITCH, TRAIT_ARCYNE_T1)
 	cmode_music = 'sound/music/combat_cult.ogg'
 
 /datum/outfit/job/roguetown/adventurer/witch/pre_equip(mob/living/carbon/human/H)
@@ -15,6 +15,7 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
+	beltl = /obj/item/storage/magebag
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	pants = /obj/item/clothing/under/roguetown/trou
@@ -23,10 +24,11 @@
 	backpack_contents = list(
 						/obj/item/reagent_containers/glass/mortar = 1,
 						/obj/item/pestle = 1,
-						/obj/item/ritechalk = 1,
 						/obj/item/candle/yellow = 2,
 						/obj/item/recipe_book/alchemy = 1,
 						/obj/item/recipe_book/survival = 1,
+						/obj/item/recipe_book/magic = 1,
+						/obj/item/chalk = 1
 						)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/crow)

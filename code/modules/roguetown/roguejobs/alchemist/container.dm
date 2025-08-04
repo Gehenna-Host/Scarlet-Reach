@@ -16,6 +16,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	list_reagents = list(/datum/reagent/water = 48)
 
+/obj/item/reagent_containers/glass/bottle/mercury
+	list_reagents = list(/datum/reagent/mercury = 48)
+
 //vanderlin potion stuff//
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
 	list_reagents = list(/datum/reagent/medicine/strongmana = 48)

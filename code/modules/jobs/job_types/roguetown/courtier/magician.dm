@@ -7,8 +7,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = RACES_APPOINTED_OUTCASTS_UP
-	allowed_patrons = NON_PSYDON_PATRONS
+	allowed_races = RACES_APPOINTED_OUTCASTS_UP		//Nobility, no construct
 	allowed_sexes = list(MALE, FEMALE)
 	spells = list(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	display_order = JDO_MAGICIAN
@@ -39,14 +38,17 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/storage/keyring/mage
-	beltl = /obj/item/book/spellbook
+	beltl = /obj/item/storage/magebag
 	id = /obj/item/clothing/ring/gold
 	r_hand = /obj/item/rogueweapon/woodstaff/riddle_of_steel/magos
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(
-	/obj/item/reagent_containers/glass/bottle/rogue/poison, 
-	/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
-	/obj/item/recipe_book/alchemy
+		/obj/item/reagent_containers/glass/bottle/rogue/poison,
+		/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+		/obj/item/recipe_book/alchemy,
+		/obj/item/recipe_book/magic,
+		/obj/item/book/spellbook,
+		/obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
 	)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, "[type]")
 	ADD_TRAIT(H, TRAIT_INTELLECTUAL, TRAIT_GENERIC)
@@ -68,7 +70,7 @@
 	H.change_stat("strength", -1)
 	H.change_stat("constitution", -1)
 	H.change_stat("intelligence", 4)
-	if(H.mind)
+	if (H && H.mind)
 		H?.mind.adjust_spellpoints(36)
 	ADD_TRAIT(H, TRAIT_MAGEARMOR, TRAIT_GENERIC)
 	if(H.age == AGE_OLD)

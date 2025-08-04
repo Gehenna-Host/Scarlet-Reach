@@ -108,7 +108,7 @@
 		stat = CONSCIOUS
 		update_icon()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf_undead/apply_damage(damage_amount, damage_type, def_zone, blocked, forced)
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf_undead/apply_damage(damage, damagetype, def_zone, blocked, forced)
 	. = ..()
 	if(is_downed)
 		if(def_zone == "head" || \
@@ -116,13 +116,13 @@
 		   def_zone == "mouth" || \
 		   def_zone == "neck")
 
-			head_health -= damage_amount
+			head_health -= damage
 			if(head_health <= 0 && stat != DEAD)
 				head_health = 0
 				death()
 
 	if(def_zone == "foreleg" || def_zone == "leg")
-		leg_health -= damage_amount
+		leg_health -= damage
 		if(leg_health <= 0 && !legs_broken)
 			leg_health = 0
 			legs_broken = TRUE

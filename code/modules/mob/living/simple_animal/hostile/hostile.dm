@@ -91,6 +91,8 @@
 			return
 	if(has_buckled_mobs() && tame)
 		return 0
+	if(binded)
+		return FALSE
 	var/list/possible_targets = ListTargets() //we look around for potential targets and make it a list for later use.
 
 	if(environment_smash)
@@ -297,6 +299,8 @@
 	if(!target || !CanAttack(target))
 		LoseTarget()
 		return 0
+	if(binded)
+		return FALSE	
 	if(target in possible_targets)
 //		var/turf/T = get_turf(src)
 //		if(target.z != T.z)

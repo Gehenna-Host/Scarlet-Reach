@@ -21,13 +21,12 @@
 	glow_color = GLOW_COLOR_DISPLACEMENT
 	glow_intensity = GLOW_INTENSITY_MEDIUM
 	gesture_required = TRUE // Offensive spell. Don't blast guards while chained.
-	var/stun_amt = 5
 	var/maxthrow = 3
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
 	var/push_range = 1
 
-/obj/effect/proc_holder/spell/invoked/repulse/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/invoked/repulse/cast(list/targets, mob/user, stun_amt = 5)
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster

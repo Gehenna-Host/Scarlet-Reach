@@ -9,7 +9,7 @@
 	recharge_time = 2 MINUTES
 	warnie = "spellwarning"
 	school = "transmutation"
-	overlay_state = "rune3" // Temporary
+	overlay_state = "haste" // Temporary icon from RW
 	spell_tier = 2
 	invocation = "Festinatio!"
 	invocation_type = "shout" // I mean, it is fast

@@ -17,7 +17,7 @@
 	associated_skill = /datum/skill/magic/arcane
 	glow_color = GLOW_COLOR_BUFF
 	glow_intensity = GLOW_INTENSITY_LOW
-	overlay_state = "rune1"
+	overlay_state = "enlarge"
 	range = 7
 
 /obj/effect/proc_holder/spell/invoked/enlarge/cast(list/targets, mob/user = usr)

@@ -260,6 +260,13 @@
 			to_chat(src, span_warning("[bound] is bound in a summoning circle. I can't move them!"))
 			return TRUE
 
+	if(isanimal(mob.pulling)) //why bother checking if we're pulling a mob?
+		var/mob/living/simple_animal/bound = mob.pulling
+		if(bound.binded)
+			move_delay = world.time + 10
+			to_chat(src, span_warning("[bound] is bound in a summoning circle. I can't move them!"))
+			return TRUE		
+
 // similar to the above, but for NPCs mostly
 /mob/proc/is_move_blocked_by_grab()
 	if(pulledby && pulledby != src)

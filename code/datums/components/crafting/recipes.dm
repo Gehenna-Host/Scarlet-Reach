@@ -84,7 +84,7 @@
 		var/count = reqs[path]
 		if(ispath(path, /datum/reagent))
 			var/datum/reagent/R = path
-			html += "[CEILING(count / 3, 1)] oz of [initial(R.name)]<br>" // Cuz we're weird and don't use it under chem catalyst and we don't want icon crash 
+			html += "- [CEILING(count / 3, 1)] oz of [initial(R.name)]<br>" // Cuz we're weird and don't use it under chem catalyst and we don't want icon crash
 		else if(ispath(path, /obj)) // Prevent a runtime from happening w/ datum atm until it is
 			var/atom/atom = path
 			if(subtype_reqs)

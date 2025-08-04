@@ -35,7 +35,7 @@
 
 /obj/item/roguegem/green/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/emerald_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/emerald_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -50,7 +50,7 @@
 
 /obj/item/roguegem/blue/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/quartz_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/quartz_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -65,7 +65,7 @@
 
 /obj/item/roguegem/yellow/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/toper_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/toper_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -80,7 +80,7 @@
 
 /obj/item/roguegem/violet/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/sapphire_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/ruby_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -95,7 +95,7 @@
 
 /obj/item/roguegem/ruby/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/ruby_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/diamond_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -110,7 +110,7 @@
 
 /obj/item/roguegem/diamond/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/diamond_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/amethyst_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -124,7 +124,7 @@
 
 /obj/item/roguegem/amethyst/Initialize()
 	. = ..()
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/amethyst_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/quartz_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -164,7 +164,7 @@
 	. = ..()
 	set_light(2, 2, 1, l_color = "#ff0d0d")
 
-	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/quartz_staff,)
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gemstaff/quartz_staff,)
 
 	AddElement(
 		/datum/element/slapcrafting,\

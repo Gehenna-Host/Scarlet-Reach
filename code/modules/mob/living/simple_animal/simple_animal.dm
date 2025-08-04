@@ -313,6 +313,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(!stop_automated_movement && wander && !doing)
 		if(ssaddle && has_buckled_mobs())
 			return 0
+		if(binded)
+			return FALSE	
 		if((isturf(loc) || allow_movement_on_non_turfs) && (mobility_flags & MOBILITY_MOVE))		//This is so it only moves if it's not inside a closet, gentics machine, etc.
 			turns_since_move++
 			if(turns_since_move >= turns_per_move)
@@ -535,6 +537,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 /mob/living/simple_animal/handle_fire()
 	. = ..()
+	if(!on_fire)
+		return TRUE
 	if(fire_stacks + divine_fire_stacks > 0)
 		apply_damage(5, BURN)
 		if(fire_stacks + divine_fire_stacks > 5)

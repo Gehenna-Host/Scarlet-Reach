@@ -173,3 +173,8 @@
 	name = "Steel quarterstaff"
 	cost = 20
 	contains = list(/obj/item/rogueweapon/woodstaff/quarterstaff/steel)
+
+/datum/supply_pack/rogue/bandit/Mage/mercury
+	name = "bottle of mercury"
+	cost = 50
+	contains = list(/obj/item/reagent_containers/glass/bottle/mercury)

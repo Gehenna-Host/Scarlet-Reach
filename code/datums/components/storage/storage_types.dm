@@ -100,6 +100,64 @@
 	allow_quick_gather = FALSE
 	allow_quick_empty = FALSE
 
+/datum/component/storage/concrete/grid/meatsack // our rucksack is different from
+// Vanderlin so we use a separate one for meatsack
+	max_w_class = WEIGHT_CLASS_NORMAL
+	screen_max_rows = 5
+	screen_max_columns = 4
+	click_gather = TRUE
+	collection_mode = COLLECT_EVERYTHING
+	dump_time = 0
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	allow_dump_out = TRUE
+	insert_preposition = "in"
+
+/datum/component/storage/concrete/grid/meatsack/New(datum/P, ...)
+	. = ..()
+	set_holdable(list(
+		/obj/item/reagent_containers/food/snacks/rogue/meat,
+		/obj/item/reagent_containers/food/snacks/fat,
+		/obj/item/natural/fur,
+		/obj/item/natural/hide,
+		/obj/item/alch/sinew,
+		/obj/item/alch/viscera,
+		/obj/item/alch/bone
+		))
+
+/datum/component/storage/concrete/grid/magebag
+	max_w_class = WEIGHT_CLASS_NORMAL
+	click_gather = TRUE
+	collection_mode = COLLECT_EVERYTHING
+	dump_time = 0
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	allow_dump_out = TRUE
+	screen_max_rows = 8
+	screen_max_columns = 5
+
+/datum/component/storage/concrete/grid/magebag/New(datum/P, ...)
+	. = ..()
+	set_holdable(list(
+		/obj/item/magic/infernalash,
+		/obj/item/magic/hellhoundfang,
+		/obj/item/magic/infernalash,
+		/obj/item/magic/abyssalflame,
+		/obj/item/magic/fairydust,
+		/obj/item/magic/iridescentscale,
+		/obj/item/magic/heartwoodcore,
+		/obj/item/magic/sylvanessence,
+		/obj/item/magic/elementalmote,
+		/obj/item/magic/elementalshard,
+		/obj/item/magic/elementalfragment,
+		/obj/item/magic/elementalrelic,
+		/obj/item/magic/obsidian,
+		/obj/item/magic/leyline,
+		/obj/item/reagent_containers/food/snacks/grown/manabloom,
+		/obj/item/magic/manacrystal,
+		/obj/item/ash,
+		))
+
 /datum/component/storage/concrete/roguetown/saddle
 	screen_max_rows = 4
 	screen_max_columns = 4
@@ -131,3 +189,4 @@
 /datum/component/storage/concrete/grid/headhook/bronze
 	screen_max_rows = 8
 	screen_max_columns = 6
+

@@ -245,6 +245,14 @@
 	produce_amount_max = 3 // Let's keep the production rate low because it is an anti-antag item
 	maturation_time = FAST_GROWING
 
+/datum/plant_def/manabloom
+	name = "manabloom"
+	icon_state = "manabloom"
+	produce_amount_min = 1
+	produce_amount_max = 3
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/manabloom
+	maturation_time = FAST_GROWING
+
 // /datum/plant_def/manabloom
 // 	name = "manabloom"
 // 	icon_state = "manabloom"

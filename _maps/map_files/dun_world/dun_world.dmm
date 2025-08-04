@@ -4654,10 +4654,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "bAQ" = (
-/obj/effect/roguerunelarge,
-/obj/item/roguegem/random,
-/turf/open/floor/rogue/church,
-/area/rogue/under/cave/goblinfort)
+/obj/structure/manaflower,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
 "bAU" = (
 /obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/grassred,
@@ -23954,6 +23953,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
+"hRL" = (
+/obj/structure/manaflower,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/bog)
 "hRO" = (
 /obj/effect/decal/cobbleedge{
 	dir = 5
@@ -43455,9 +43458,6 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
-/obj/effect/roguerunelarge{
-	color = "#400303"
-	},
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder/spear,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/under/cave/orcdungeon)
@@ -59343,6 +59343,10 @@
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
+"tEE" = (
+/obj/structure/well/fountain/mana,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
 "tEF" = (
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/rogue/cobble,
@@ -311655,7 +311659,7 @@ mrW
 mrW
 pZv
 mrW
-mrW
+bAQ
 mrW
 qUs
 tYx
@@ -312570,7 +312574,7 @@ vQH
 tYx
 mrW
 mrW
-mrW
+bAQ
 mrW
 mrW
 tYx
@@ -317099,7 +317103,7 @@ sLh
 sLh
 mrW
 mrW
-mrW
+bAQ
 tYx
 czH
 czH
@@ -317116,7 +317120,7 @@ tYx
 tYx
 mrW
 mrW
-mrW
+bAQ
 mrW
 hsv
 mrW
@@ -318882,7 +318886,7 @@ tYx
 tYx
 mrW
 mrW
-mrW
+bAQ
 mrW
 tYx
 tYx
@@ -318918,7 +318922,7 @@ tYx
 tYx
 pZv
 mrW
-mrW
+bAQ
 tYx
 vhs
 epy
@@ -320291,7 +320295,7 @@ czH
 tYx
 mrW
 pZv
-mrW
+bAQ
 mrW
 vQH
 vQH
@@ -320711,7 +320715,7 @@ vQH
 tYx
 tYx
 sLh
-mrW
+bAQ
 tYx
 vhs
 hgc
@@ -321161,7 +321165,7 @@ vQH
 vQH
 tYx
 mrW
-mrW
+bAQ
 sLh
 mrW
 tYx
@@ -322066,9 +322070,9 @@ vhs
 tYx
 mrW
 mrW
-mrW
+tEE
 sLh
-mrW
+bAQ
 mrW
 tYx
 czH
@@ -322537,7 +322541,7 @@ vhs
 czH
 mrW
 mrW
-mrW
+bAQ
 sLh
 mrW
 ujU
@@ -322945,7 +322949,7 @@ qUs
 qUs
 qUs
 sLh
-sLh
+hRL
 mrW
 tYx
 tYx
@@ -322969,7 +322973,7 @@ vQH
 vhs
 tYx
 pZv
-mrW
+bAQ
 mrW
 qUs
 tYx
@@ -323416,7 +323420,7 @@ vhs
 czH
 tYx
 mrW
-mrW
+bAQ
 vQH
 vQH
 vQH
@@ -323886,7 +323890,7 @@ uaU
 czH
 tYx
 ylq
-mrW
+bAQ
 mrW
 vQH
 vQH
@@ -323899,7 +323903,7 @@ pZv
 mrW
 mrW
 mrW
-mrW
+bAQ
 mrW
 tYx
 epy
@@ -326570,7 +326574,7 @@ vQH
 qUs
 qUs
 qUs
-mrW
+bAQ
 mrW
 mrW
 pct
@@ -326619,7 +326623,7 @@ tYx
 mrW
 sLh
 sLh
-mrW
+bAQ
 vQH
 vQH
 vhs
@@ -327916,7 +327920,7 @@ pZv
 mrW
 mrW
 jGH
-mrW
+bAQ
 czH
 vhs
 hgc
@@ -328841,7 +328845,7 @@ vhs
 tYx
 mrW
 sLh
-sLh
+hRL
 mrW
 tYx
 czH
@@ -330677,7 +330681,7 @@ qUs
 vQH
 mrW
 mrW
-mrW
+bAQ
 mrW
 vQH
 vQH
@@ -332018,7 +332022,7 @@ vhs
 vhs
 vQH
 mrW
-mrW
+bAQ
 sLh
 mrW
 tYx
@@ -332933,7 +332937,7 @@ mrW
 ylq
 mrW
 mrW
-mrW
+bAQ
 mrW
 tYx
 czH
@@ -465633,7 +465637,7 @@ tVR
 hrT
 hrT
 hrT
-bAQ
+tVR
 jrD
 uPk
 mQP

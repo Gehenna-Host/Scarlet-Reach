@@ -5,6 +5,7 @@
 	drawmessage = "I prepare to form a magical shroud."
 	dropmessage = "I release my arcyne focus."
 	school = "abjuration"
+	overlay_state = "nondetection"
 	recharge_time = 10 SECONDS
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane

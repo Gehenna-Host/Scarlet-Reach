@@ -15,6 +15,7 @@
 	smeltresult = /obj/item/ash
 	grid_width = 32
 	grid_height = 64
+	var/quality = 1
 
 /obj/item/rogueweapon/hammer/attack_obj(obj/attacked_object, mob/living/user)
 	if(!isliving(user) || !user.mind)
