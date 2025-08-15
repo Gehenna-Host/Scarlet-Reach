@@ -539,6 +539,10 @@
 
 /obj/item/mattcoin/attack_right(mob/living/carbon/human/user)
 	user.changeNext_move(CLICK_CD_INTENTCAP)
+	var/area/user_area = get_area(user)
+	if (!istype(user_area, /area/rogue/indoors/banditcamp))
+		to_chat(user, span_danger("The scomstone does not respond outside of the camp!"))
+		return
 	var/input_text = input(user, "Enter your message:", "Message")
 	if(input_text)
 		var/usedcolor = user.voice_color
